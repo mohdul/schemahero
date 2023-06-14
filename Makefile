@@ -152,7 +152,7 @@ kind: bin/kubectl-schemahero manager
 .PHONY: contoller-gen
 controller-gen:
 ifeq (, $(shell which controller-gen))
-	go install sigs.k8s.io/controller-tools/cmd/controller-gen@v0.7.0
+	go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.7.0
 CONTROLLER_GEN=$(shell go env GOPATH)/bin/controller-gen
 else
 CONTROLLER_GEN=$(shell which controller-gen)
@@ -161,7 +161,7 @@ endif
 .PHONY: client-gen
 client-gen:
 ifeq (, $(shell which client-gen))
-	go install k8s.io/code-generator/cmd/client-gen@kubernetes-1.25.3
+	go get k8s.io/code-generator/cmd/client-gen@kubernetes-1.25.3
 CLIENT_GEN=$(shell go env GOPATH)/bin/client-gen
 else
 CLIENT_GEN=$(shell which client-gen)
@@ -170,7 +170,7 @@ endif
 .PHONY: lister-gen
 lister-gen:
 ifeq (, $(shell which lister-gen))
-	go install k8s.io/code-generator/cmd/lister-gen@kubernetes-1.25.3
+	go get k8s.io/code-generator/cmd/lister-gen@kubernetes-1.25.3
 LISTER_GEN=$(shell go env GOPATH)/bin/lister-gen
 else
 LISTER_GEN=$(shell which lister-gen)
@@ -179,7 +179,7 @@ endif
 .PHONY: informer-gen
 informer-gen:
 ifeq (, $(shell which informer-gen))
-	go install k8s.io/code-generator/cmd/informer-gen@kubernetes-1.25.3
+	go get k8s.io/code-generator/cmd/informer-gen@kubernetes-1.25.3
 INFORMER_GEN=$(shell go env GOPATH)/bin/informer-gen
 else
 INFORMER_GEN=$(shell which informer-gen)
